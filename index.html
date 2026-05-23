@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> alpaca-licious | Cute Alpaca Avatar Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦙</text></svg>">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Floating deco blobs -->
+        <div class="deco deco-1"></div>
+        <div class="deco deco-2"></div>
+        <div class="deco deco-3"></div>
+
+        <!-- Header -->
+        <header>
+            <div class="header-inner">
+                <div class="title-group">
+                    <span class="title-emoji" aria-hidden="true">🦙</span>
+                    <h1>alpaca-licious</h1>
+                    <span class="title-emoji" aria-hidden="true">✨</span>
+                </div>
+                <p class="tagline">mix, match & build your fluffiest friend</p>
+            </div>
+            <div class="keyboard-hint" id="keyboard-hint" aria-live="polite"></div>
+        </header>
+
+        <div class="main-container">
+
+            <!-- Left: Preview Area -->
+            <div class="preview-area">
+                <div class="canvas-wrapper">
+                    <div class="canvas-container" id="canvas-container">
+                        <div id="alpaca-canvas" aria-label="Alpaca avatar preview">
+                            <!-- Layers injected by JS -->
+                        </div>
+                    </div>
+                    <!-- Corner decorations -->
+                    <div class="corner corner-tl">✿</div>
+                    <div class="corner corner-tr">✿</div>
+                    <div class="corner corner-bl">✿</div>
+                    <div class="corner corner-br">✿</div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="randomize-btn" class="btn btn-primary" title="Randomize (R)">
+                        <span class="btn-icon">🎲</span>
+                        <span>Randomize</span>
+                    </button>
+                    <div class="save-group">
+                        <button id="download-btn" class="btn btn-secondary" title="Download PNG (D)">
+                            <span class="btn-icon">📸</span>
+                            <span>Save PNG</span>
+                        </button>
+                        <button id="copy-btn" class="btn btn-ghost" title="Copy to clipboard (C)">
+                            <span class="btn-icon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick look summary -->
+                <div class="look-summary" id="look-summary" aria-live="polite">
+                    <span class="look-label">✦ your look</span>
+                    <div class="look-chips" id="look-chips"></div>
+                </div>
+            </div>
+
+            <!-- Right: Controls Area -->
+            <div class="controls-area">
+                <nav class="category-tabs" role="tablist" aria-label="Alpaca part categories">
+                    <button data-category="background" class="category-btn active" role="tab" aria-selected="true">
+                        <span class="cat-icon">🌅</span> Background
+                    </button>
+                    <button data-category="neck" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">🦙</span> Neck
+                    </button>
+                    <button data-category="hair" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">💇</span> Hair
+                    </button>
+                    <button data-category="ears" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">👂</span> Ears
+                    </button>
+                    <button data-category="eyes" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">👀</span> Eyes
+                    </button>
+                    <button data-category="mouth" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">😊</span> Mouth
+                    </button>
+                    <button data-category="leg" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">🦵</span> Leg
+                    </button>
+                    <button data-category="accessory" class="category-btn" role="tab" aria-selected="false">
+                        <span class="cat-icon">🎀</span> Accessory
+                    </button>
+                </nav>
+
+                <div class="panel-header">
+                    <h2 class="panel-title" id="panel-title">Choose Background</h2>
+                    <span class="panel-count" id="panel-count"></span>
+                </div>
+
+                <div class="style-grid" id="style-grid" role="group" aria-label="Style options">
+                    <!-- Style buttons injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>made with 🧶 by <strong>Svlmaaaa</strong> · alpaca-licious 🦙</p>
+            <p class="shortcuts">⌨️ shortcuts: <kbd>R</kbd> randomize · <kbd>D</kbd> download · <kbd>C</kbd> copy · <kbd>←</kbd><kbd>→</kbd> switch category</p>
+        </footer>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast" aria-live="assertive" aria-atomic="true"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
